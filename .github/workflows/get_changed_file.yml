@@ -39,6 +39,9 @@ jobs:
       uses: tj-actions/changed-files@v35
       with:
         json: true
+    - name: echo json
+      run: |
+        echo {{ steps.changed-files.outputs.json}}
     - name: Run script
       run: |
         python main.py
