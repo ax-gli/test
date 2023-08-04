@@ -32,11 +32,15 @@ jobs:
       id: changed-files
       uses: tj-actions/changed-files@v35
       with:
+        write_output_files: true
         json: true
+        dir_names: true
+        dir_names_max_depth: 2
     - name: echo json
       run: |
         echo all changed_files: ${{ steps.changed-files.outputs.all_changed_files}}
         echo all outputs: ${{ steps.run_tests.outputs.*}}
+
     - name: Run script
       run: |
         python main.py
