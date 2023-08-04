@@ -39,8 +39,7 @@ jobs:
     - name: echo json
       run: |
         echo all changed_files: ${{ steps.changed-files.outputs.all_changed_files}}
-        echo all outputs: ${{ steps.run_tests.outputs.*}}
-
     - name: Run script
       run: |
+        ls .github/outputs
         python main.py
