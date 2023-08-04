@@ -41,7 +41,8 @@ jobs:
         json: true
     - name: echo json
       run: |
-        echo {{ steps.changed-files.outputs.json}}
+        echo all changed_files: {{ steps.changed-files.outputs.all_changed_files}}
+        echo all outputs: {{ steps.run_tests.outputs.*}}
     - name: Run script
       run: |
         python main.py
