@@ -42,4 +42,5 @@ jobs:
     - name: Run script
       run: |
         ls .github/outputs
+        cat .github/outputs/all_changed_files.json
         python main.py
